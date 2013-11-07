@@ -24,10 +24,15 @@ class Sejf {
 		Sejf(const Sejf& sejf);
 
 		/*
-		 * Prywatne przeciążenie operacji przypisania uniemożliwiające przypisanie
-		 * sejfowi innej wartości.
+		 * Prywatne przeciążenie operatorów, aby uniemożliwić modyfikację.
 		 */
-		void operator=(const Sejf sejf);
+		void operator=(const Sejf& sejf);
+		void operator<<=(const Sejf& sejf);
+		void operator>>=(const Sejf& sejf);
+		void operator&=(const Sejf& sejf);
+		void operator^=(const Sejf& sejf);
+		void operator|=(const Sejf& sejf);
+		void operator%=(const Sejf& sejf);
 	public:
 
 		/*
@@ -39,27 +44,23 @@ class Sejf {
 		/*
 		 * Operator umożliwiający dostęp do litery napisu o indeksie przekazanym w argumencie.
 		 */
-		long long operator[](const size_t ind) const;
+		short int operator[](const size_t ind);
 		
 		/*
 		 * Operator zwiększający ilość dostępów do sejfu o x.
 		 */
-		void operator+=(const size_t x) const;
+		void operator+=(const size_t x);
+		
+		/*
+		 * Operator zwiększający ilość dostępów do sejfu x razy.
+		 */
+		void operator*=(const size_t x);
 
 		/*
 		 * Operator zmniejszający ilość dostępów do sejfu o x.
 		 */
-		void operator-=(const size_t x) const;
+		void operator-=(const size_t x);
 
-		/*
-		 * Operator zwiększający ilość dostępów do sejfu x razy.
-		 */
-		void operator*=(const size_t x) const;
-
-		/*
-		 * Przedefiniowanie funkcji swap.
-		 */
-		void swap(Sejf& sejf1, Sejf& sejf2);
 };
 
 #endif
