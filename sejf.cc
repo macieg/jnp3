@@ -1,44 +1,13 @@
-/*
- * Klasa reprezentująca sejf.
- */
-class Sejf {
+#include "sejf.h"
 
-	private:
+Sejf::Sejf(std::string text, size_t available_accesses)
+{
+	this->text = text;
+	this->available_accesses = available_accesses;
+}
 
-		/*
-		 * Napis przechowywany w sejfie.
-		 */
-		String text;
-
-		/*
-		 * Ilość pozostałych dostępów do Sejfu.
-		 */
-		size_t available_accesses;
-	public:
-
-		/*
-		 * Konstruktor przyjmujący jako argument napis, który będzie przechowywany w sejfie,
-		 * oraz być może ilość możliwych dostępów do sejfu.
-		 */
-		Sejf(String text, size_t available_accesses = 42);
-
-		/*
-		 * Operator umożliwiający dostęp do litery napisu o indeksie przekazanym w argumencie.
-		 */
-		char operator[](const size_t ind) const;
-		
-		/*
-		 * Operator zwiększający ilość dostępów do sejfu o x.
-		 */
-		void operator+=(const size_t x) const;
-
-		/*
-		 * Operator zmniejszający ilość dostępów do sejfu o x.
-		 */
-		void operator-=(const size_t x) const;
-
-		/*
-		 * Operator zwiększający ilość dostępów do sejfu x razy.
-		 */
-		void operator*=(const size_t x) const;
-};
+void Sejf::swap(Sejf& sejf1, Sejf& sejf2)
+{
+	std::swap(sejf1.text, sejf2.text);
+	std::swap(sejf1.available_accesses, sejf2.available_accesses);
+}
