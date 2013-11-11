@@ -1,6 +1,9 @@
 #ifndef SEJF_H
 #define SEJF_H
+#include <iostream>
 #include <string>
+#include "kontroler.h"
+
 /*
  * Klasa reprezentująca sejf.
  */
@@ -17,6 +20,11 @@ class Sejf {
 		 * Ilość pozostałych dostępów do Sejfu.
 		 */
 		size_t available_accesses;
+
+		/*
+		 * Obiekt kontrolera.
+		 */
+		Kontroler controler;
 
 		/*
 		 * Prywatny konstruktor uniemożliwiający skopiowanie sejfu.
@@ -45,12 +53,12 @@ class Sejf {
 		 * Operator umożliwiający dostęp do litery napisu o indeksie przekazanym w argumencie.
 		 */
 		short int operator[](const size_t ind);
-		
+
 		/*
 		 * Operator zwiększający ilość dostępów do sejfu o x.
 		 */
 		void operator+=(const size_t x);
-		
+
 		/*
 		 * Operator zwiększający ilość dostępów do sejfu x razy.
 		 */
@@ -61,6 +69,10 @@ class Sejf {
 		 */
 		void operator-=(const size_t x);
 
+		/*
+		 * Zwraca obiekt kontrolera.
+		 */
+		Kontroler kontroler();	
 };
 
 #endif

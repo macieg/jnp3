@@ -11,3 +11,5 @@ Dodałem blokadę innych operatorów, słusznie?
 4. Jak rozwiazać strumienie?
 
 5. Czy short int rozwiązuje problemt 16 bitowej zmiennej?
+
+6. Problem z kompilacją
