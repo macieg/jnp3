@@ -16,7 +16,7 @@ Dostęp do elementu -- powinien być możliwy przez standardowy operator []. Na
   próbujemy dostać się do elementu, który nie istnieje (niepoprawny indeks) w
   napisie, to powinna być zwrócona wartość -1 i taka operacja nie liczy się
   jako próba odczytu. Po przekroczeniu liczby dozwolonych odczytów także
-  powinna być zwracana wartość -1. 
+  powinna być zwracana wartość -1.
 
 Manipulacje sejfem -- za pomocą operatorów +=, -=, *= można zmienić pozostałą
   liczbę prób dostępu. Na przykład po wykonaniu kodu
@@ -50,7 +50,8 @@ kontroler() -- umożliwia dostęp do Kontrolera danego sejfu.
   która wypisze na strumień os napis:
   * "ALARM: WLAMANIE\n" jeżeli po wyczerpaniu dozwolonej liczby odczytów była
     co najmniej jedna próba odczytu (z poprawnym indeksem)
-  * "ALARM: ZMANIPULOWANY\n" jeżeli na sejfie dokonano z sukcesem jednej z operacji +=, -=, *=
+  * "ALARM: ZMANIPULOWANY\n" jeżeli na sejfie dokonano z sukcesem jednej z
+	operacji +=, -=, *=
   * "OK\n" w pozostałych przypadkach
   Kontroler powinien pozostawać związany z sejfem przez cały czas, jeżeli oba
   te obiekty są widoczne. Na przykład wynikiem kodu:

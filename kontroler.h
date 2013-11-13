@@ -3,13 +3,16 @@
 #include <iostream>
 #include "sejf.h"
 
-
 /*
  * Klasa kontrolera.
  */
-class Kontroler {
+class Kontroler final {
+
+	friend std::ostream & operator << (std::ostream &out,
+						const Kontroler &kontroler);
 
 	friend class Sejf;
+
 	private:
 
 		/*
@@ -27,7 +30,7 @@ class Kontroler {
 		 */
 		Kontroler();
 
-	public:	
+	public:
 
 		/*
 		 * Ustawia informację o próbie włamania.
@@ -38,12 +41,6 @@ class Kontroler {
 		 * Ustawia informację o próbie manipulacja.
 		 */
 		void set_is_manipulated();
-
-		/*
-		 * Operator do wypisywania informacji o próbach dostępu
-		 * do sejfu.
-		 */
-		std::ostream& operator<<(std::ostream& out);
 };
 
 #endif

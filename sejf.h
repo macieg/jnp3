@@ -3,11 +3,16 @@
 #include <iostream>
 #include <string>
 #include "kontroler.h"
+#include <cstdint>
 
+class Kontroler;
 /*
  * Klasa reprezentująca sejf.
  */
-class Sejf {
+
+class Sejf final {
+
+	//friend void std::swap(Sejf& s1, Sejf& s2);
 
 	private:
 
@@ -24,7 +29,11 @@ class Sejf {
 		/*
 		 * Obiekt kontrolera.
 		 */
-		Kontroler controler;
+		Kontroler* controler = NULL;
+
+		/*
+		 * Kopiuje dany sejf, zeby umożliwić zamianę dwóch sejfów.
+		 */
 
 		/*
 		 * Prywatny konstruktor uniemożliwiający skopiowanie sejfu.
@@ -34,7 +43,7 @@ class Sejf {
 		/*
 		 * Prywatne przeciążenie operatorów, aby uniemożliwić modyfikację.
 		 */
-		void operator=(const Sejf& sejf);
+		void operator=(Sejf& sejf);
 		void operator<<=(const Sejf& sejf);
 		void operator>>=(const Sejf& sejf);
 		void operator&=(const Sejf& sejf);
@@ -52,7 +61,7 @@ class Sejf {
 		/*
 		 * Operator umożliwiający dostęp do litery napisu o indeksie przekazanym w argumencie.
 		 */
-		short int operator[](const size_t ind);
+		int16_t operator[](const size_t ind);
 
 		/*
 		 * Operator zwiększający ilość dostępów do sejfu o x.
@@ -72,7 +81,7 @@ class Sejf {
 		/*
 		 * Zwraca obiekt kontrolera.
 		 */
-		Kontroler kontroler();	
+		Kontroler kontroler();
 };
 
 #endif

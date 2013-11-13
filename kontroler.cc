@@ -1,5 +1,5 @@
 #include "kontroler.h"
-
+#include <iostream>
 Kontroler::Kontroler()
 {
 	this->break_in = false;
@@ -16,12 +16,12 @@ void Kontroler::set_is_manipulated()
 	this->is_manipulated = true;
 }
 
-std::ostream& Kontroler::operator<<(std::ostream& out)
+std::ostream& operator<<(std::ostream& out, const Kontroler &kontroler)
 {
-	if (this->break_in)
-		out << this->break_in << std::endl;
-	else if (this->is_manipulated)
-		out << this->is_manipulated << std::endl;
+	if (kontroler.break_in)
+		out << kontroler.break_in << std::endl;
+	else if (kontroler.is_manipulated)
+		out << kontroler.is_manipulated << std::endl;
 	else
 		out << "OK" << std::endl;
 	return out;
