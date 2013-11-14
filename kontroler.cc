@@ -1,9 +1,10 @@
 #include "kontroler.h"
 #include <iostream>
-Kontroler::Kontroler()
+Kontroler::Kontroler(int accesses)
 {
 	this->break_in = false;
 	this->is_manipulated = false;
+	this->available_accesses = accesses;
 }
 
 void Kontroler::set_break_in()
@@ -16,13 +17,25 @@ void Kontroler::set_is_manipulated()
 	this->is_manipulated = true;
 }
 
+Kontroler::operator bool() const
+{
+	return (this->available_accesses > 0);
+}
+
+
 std::ostream& operator<<(std::ostream& out, const Kontroler &kontroler)
 {
 	if (kontroler.break_in)
-		out << kontroler.break_in << std::endl;
+	{
+		out << "ALARM: WŁAMANIE!\n";
+	}
 	else if (kontroler.is_manipulated)
-		out << kontroler.is_manipulated << std::endl;
+	{
+		out << "ALARM: ZMANIPULOWANY!\n";
+	}
 	else
+	{
 		out << "OK" << std::endl;
+	}
 	return out;
 }

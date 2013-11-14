@@ -15,32 +15,42 @@ class Kontroler final {
 
 	private:
 
-		/*
+		/**
 		 * Informacja mówiąca, czy nastąpiło włamanie.
 		 */
 		bool break_in;
 
-		/*
+		/**
 		 * Informacja mówiąca, czy ilość dostępów była zmanipulowana.
 		 */
 		bool is_manipulated;
 
-		/*
+		/**
 		 * Prywatny konstruktor kontrolera "zaprzyjaźniony" z sejfem.
 		 */
-		Kontroler();
+		Kontroler(int accesses);
 
-	public:
+		/**
+		 * Ilość pozostałych dostępów do Sejfu.
+		 */
+		int available_accesses;
 
-		/*
+		/**
 		 * Ustawia informację o próbie włamania.
 		 */
 		void set_break_in();
 
-		/*
+		/**
 		 * Ustawia informację o próbie manipulacja.
 		 */
 		void set_is_manipulated();
+
+	public:
+
+		/**
+		 * Operator bool.
+		 */
+		 operator bool() const;
 };
 
 #endif
