@@ -99,6 +99,24 @@ void Sejf::operator-=(const int x)
 	}
 }
 
+Sejf::Sejf(Sejf&& sejf)
+{
+	this->break_in = sejf.get_break_in();
+	this->is_manipulated = sejf.get_is_manipulated();
+	this->available_accesses = sejf.get_available_accesses();
+	//delete this->controler;
+	//this->controler = new Kontroler(this);
+}
+
+void Sejf::operator=(Sejf&& sejf)
+{
+	this->break_in = sejf.get_break_in();
+	this->is_manipulated = sejf.get_is_manipulated();
+	this->available_accesses = sejf.get_available_accesses();
+	//delete this->controler;
+	//this->controler = new Kontroler(this);
+}
+
 Kontroler& Sejf::kontroler()
 {
 	return *(this->controler);

@@ -104,21 +104,31 @@ class Sejf final {
 		 * Podaje obiekt kontrolera.
 		 */
 		Kontroler& kontroler();
-		
+
 		/**
-		  * Zwraca informację o tym, czy nastąpiło włamanie.
-		  */
-		 bool get_break_in() const;
+		 * Operator przypisania dla rvalue.
+		 */
+		void operator=(Sejf&& sejf);
 
-		 /**
-		  * Zwraca informacje o tym, czy nasąpiła manipulacja.
-		  */
-		 bool get_is_manipulated() const;
+		/**
+		 * Konstruktor kopiujący dla rvalue.
+		 */
+		Sejf(Sejf&& sejf);
 
-		 /**
-		  * Zwraca liczbę dostępów do sejfu.
-		  */
-		 int get_available_accesses() const;
+		/**
+		 * Zwraca informację o tym, czy nastąpiło włamanie.
+		 */
+		bool get_break_in() const;
+
+		/**
+		 * Zwraca informacje o tym, czy nasąpiła manipulacja.
+		 */
+		bool get_is_manipulated() const;
+
+		/**
+		 * Zwraca liczbę dostępów do sejfu.
+		 */
+		int get_available_accesses() const;
 
 };
 

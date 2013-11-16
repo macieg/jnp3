@@ -18,6 +18,7 @@ class Kontroler final {
 	private:
 
 		Sejf* sejf;
+
 		/**
 		 * Prywatny konstruktor kontrolera "zaprzyjaźniony" z sejfem.
 		 */

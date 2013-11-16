@@ -19,6 +19,10 @@ int main()
     cout << k1;
     s1[2];
     cout << k1;
-    Sejf s2("bbb", 2);
-    swap(s1, s2);
+
+    Sejf sejfik1("aaa", 10);
+    Sejf sejfik2("bbb", 100);
+    swap(sejfik1, sejfik2);
+
+    cout << sejfik1.get_available_accesses() << " " << sejfik2.get_available_accesses() << endl;
 }
