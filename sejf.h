@@ -7,13 +7,27 @@
 #include <utility>
 
 class Kontroler;
+
 /*
  * Klasa reprezentująca sejf.
  */
-
 class Sejf final {
 
 	private:
+		/**
+		 * Informacja mówiąca, czy nastąpiło włamanie.
+		 */
+		bool break_in;
+
+		/**
+		 * Informacja mówiąca, czy ilość dostępów była zmanipulowana.
+		 */
+		bool is_manipulated;
+
+		/**
+		 * Ilość pozostałych dostępów do Sejfu.
+		 */
+		int available_accesses;
 
 		/**
 		 * Napis przechowywany w sejfie.
@@ -29,6 +43,16 @@ class Sejf final {
 		 * Prywatny konstruktor uniemożliwiający skopiowanie sejfu.
 		 */
 		Sejf(const Sejf& sejf);
+
+		/**
+		 * Ustawia informację o próbie włamania.
+		 */
+		void set_break_in();
+
+		/**
+		 * Ustawia informację o próbie manipulacja.
+		 */
+		void set_is_manipulated();
 
 		/**
 		 * Prywatne przeciążenie operatorów, aby uniemożliwić
@@ -80,6 +104,22 @@ class Sejf final {
 		 * Podaje obiekt kontrolera.
 		 */
 		Kontroler& kontroler();
+		
+		/**
+		  * Zwraca informację o tym, czy nastąpiło włamanie.
+		  */
+		 bool get_break_in() const;
+
+		 /**
+		  * Zwraca informacje o tym, czy nasąpiła manipulacja.
+		  */
+		 bool get_is_manipulated() const;
+
+		 /**
+		  * Zwraca liczbę dostępów do sejfu.
+		  */
+		 int get_available_accesses() const;
+
 };
 
 #endif

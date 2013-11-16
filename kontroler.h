@@ -3,47 +3,25 @@
 #include <iostream>
 #include "sejf.h"
 
+class Sejf;
+
 /*
  * Klasa kontrolera.
  */
 class Kontroler final {
 
-	friend std::ostream & operator << (std::ostream &out,
+	friend std::ostream& operator<<(std::ostream &out,
 						const Kontroler &kontroler);
 
 	friend class Sejf;
 
 	private:
 
-		/**
-		 * Informacja mówiąca, czy nastąpiło włamanie.
-		 */
-		bool break_in;
-
-		/**
-		 * Informacja mówiąca, czy ilość dostępów była zmanipulowana.
-		 */
-		bool is_manipulated;
-
+		Sejf* sejf;
 		/**
 		 * Prywatny konstruktor kontrolera "zaprzyjaźniony" z sejfem.
 		 */
-		Kontroler(int accesses);
-
-		/**
-		 * Ilość pozostałych dostępów do Sejfu.
-		 */
-		int available_accesses;
-
-		/**
-		 * Ustawia informację o próbie włamania.
-		 */
-		void set_break_in();
-
-		/**
-		 * Ustawia informację o próbie manipulacja.
-		 */
-		void set_is_manipulated();
+		Kontroler(Sejf* sejf);
 
 	public:
 
@@ -51,6 +29,16 @@ class Kontroler final {
 		 * Operator bool.
 		 */
 		 operator bool() const;
+
+		 /**
+		  * Zwraca informację o tym, czy nastąpiło włamanie.
+		  */
+		 bool break_in() const;
+
+		 /**
+		  * Zwraca informacje o tym, czy nasąpiła manipulacja.
+		  */
+		 bool is_manipulated() const;
 };
 
 #endif
