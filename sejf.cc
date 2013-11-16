@@ -21,7 +21,9 @@ Sejf::Sejf(std::string text, int available_accesses)
 
 Sejf::~Sejf()
 {
-	delete this->controler;
+	//if (this->controler != NULL)
+	//	delete this->controler;
+	//this->controler = NULL;
 }
 
 void Sejf::set_break_in()
