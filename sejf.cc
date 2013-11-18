@@ -17,7 +17,6 @@ Sejf::Sejf(std::string text, int available_accesses) :
 	this->is_manipulated = false;
 	this->available_accesses = available_accesses;
 	this->text = text;
-	//this->controler = Kontroler(this);
 }
 
 void Sejf::set_break_in()

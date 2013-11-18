@@ -6,8 +6,6 @@
 #include <cstdint>
 #include <utility>
 
-//class Kontroler;
-
 /*
  * Klasa reprezentująca sejf.
  */
