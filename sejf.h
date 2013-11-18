@@ -58,7 +58,7 @@ class Sejf final {
 		 * Prywatne przeciążenie operatorów, aby uniemożliwić
 		 * modyfikację.
 		 */
-		void operator=(Sejf& sejf);
+		void operator=(const Sejf& sejf);
 		void operator<<=(const Sejf& sejf);
 		void operator>>=(const Sejf& sejf);
 		void operator&=(const Sejf& sejf);

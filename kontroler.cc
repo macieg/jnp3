@@ -9,7 +9,7 @@ Kontroler::Kontroler(Sejf* sejf)
 
 Kontroler::operator bool() const
 {
-	return (this->sejf->get_available_accesses() > 0);
+	return (sejf->get_available_accesses() > 0);
 }
 
 bool Kontroler::break_in() const
