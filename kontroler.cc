@@ -1,4 +1,5 @@
 #include "kontroler.h"
+#include "sejf.h"
 #include <iostream>
 
 Kontroler::Kontroler(Sejf* sejf)

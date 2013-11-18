@@ -1,7 +1,6 @@
 #ifndef KONTROLER_H
 #define KONTROLER_H
 #include <iostream>
-#include "sejf.h"
 
 class Sejf;
 
@@ -22,7 +21,7 @@ class Kontroler final {
 		/**
 		 * Prywatny konstruktor kontrolera "zaprzyjaźniony" z sejfem.
 		 */
-		Kontroler(Sejf* sejf);
+		Kontroler(Sejf *sejf);
 
 	public:
 

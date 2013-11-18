@@ -7,7 +7,8 @@
 #include <utility>
 #include <stdexcept>
 
-Sejf::Sejf(std::string text, int available_accesses)
+Sejf::Sejf(std::string text, int available_accesses) : 
+	controler(this)
 {
 	if (available_accesses < 0)
 		throw std::invalid_argument(std::string("Liczba dostepow"\
@@ -16,14 +17,7 @@ Sejf::Sejf(std::string text, int available_accesses)
 	this->is_manipulated = false;
 	this->available_accesses = available_accesses;
 	this->text = text;
-	this->controler = new Kontroler(this);
-}
-
-Sejf::~Sejf()
-{
-	//if (this->controler != NULL)
-	//	delete this->controler;
-	//this->controler = NULL;
+	//this->controler = Kontroler(this);
 }
 
 void Sejf::set_break_in()
@@ -101,13 +95,12 @@ void Sejf::operator-=(const int x)
 	}
 }
 
-Sejf::Sejf(Sejf&& sejf)
+Sejf::Sejf(Sejf&& sejf) :
+	controler(this)
 {
 	this->break_in = sejf.get_break_in();
 	this->is_manipulated = sejf.get_is_manipulated();
 	this->available_accesses = sejf.get_available_accesses();
-	//delete this->controler;
-	//this->controler = new Kontroler(this);
 }
 
 void Sejf::operator=(Sejf&& sejf)
@@ -115,12 +108,10 @@ void Sejf::operator=(Sejf&& sejf)
 	this->break_in = sejf.get_break_in();
 	this->is_manipulated = sejf.get_is_manipulated();
 	this->available_accesses = sejf.get_available_accesses();
-	//delete this->controler;
-	//this->controler = new Kontroler(this);
 }
 
-Kontroler& Sejf::kontroler()
+Kontroler Sejf::kontroler()
 {
-	return *(this->controler);
+	return controler;
 }
 

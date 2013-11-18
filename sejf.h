@@ -6,12 +6,14 @@
 #include <cstdint>
 #include <utility>
 
-class Kontroler;
+//class Kontroler;
 
 /*
  * Klasa reprezentująca sejf.
  */
 class Sejf final {
+
+	friend class Kontroler;
 
 	private:
 		/**
@@ -37,7 +39,7 @@ class Sejf final {
 		/**
 		 * Obiekt kontrolera.
 		 */
-		Kontroler* controler;
+		Kontroler controler;
 
 		/**
 		 * Prywatny konstruktor uniemożliwiający skopiowanie sejfu.
@@ -75,11 +77,6 @@ class Sejf final {
 		Sejf(std::string text, int available_accesses = 42);
 
 		/**
-		 * Destruktor sejfu.
-		 */
-		~Sejf();
-
-		/**
 		 * Operator umożliwiający dostęp do litery napisu o indeksie
 		 * przekazanym w argumencie.
 		 */
@@ -103,7 +100,7 @@ class Sejf final {
 		/**
 		 * Podaje obiekt kontrolera.
 		 */
-		Kontroler& kontroler();
+		Kontroler kontroler();
 
 		/**
 		 * Operator przypisania dla rvalue.
