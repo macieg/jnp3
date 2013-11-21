@@ -111,7 +111,7 @@ void Sejf::operator=(Sejf&& sejf)
 	available_accesses = sejf.get_available_accesses();
 }
 
-Kontroler Sejf::kontroler()
+const Kontroler Sejf::kontroler() const
 {
 	return controler;
 }

@@ -16,12 +16,12 @@ class Kontroler final {
 
 	private:
 
-		Sejf* sejf;
+		const Sejf* sejf;
 
 		/**
 		 * Prywatny konstruktor kontrolera "zaprzyjaźniony" z sejfem.
 		 */
-		Kontroler(Sejf *sejf);
+		Kontroler(const Sejf *sejf);
 
 	public:
 

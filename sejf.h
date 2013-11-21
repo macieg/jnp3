@@ -98,7 +98,7 @@ class Sejf final {
 		/**
 		 * Podaje obiekt kontrolera.
 		 */
-		Kontroler kontroler();
+		const Kontroler kontroler() const;
 
 		/**
 		 * Operator przypisania dla rvalue.

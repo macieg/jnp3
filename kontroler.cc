@@ -2,7 +2,7 @@
 #include "sejf.h"
 #include <iostream>
 
-Kontroler::Kontroler(Sejf* sejf)
+Kontroler::Kontroler(const Sejf* sejf)
 {
 	this->sejf = sejf;
 }
