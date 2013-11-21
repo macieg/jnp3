@@ -12,5 +12,8 @@ sejf.o: kontroler.o sejf.h sejf.cc
 test: test.cc sejf.o kontroler.o
 	g++ $(CFLAGS) -O2 -Wall kontroler.o sejf.o test.cc -o test
 
+test0: test0.cc sejf.o kontroler.o
+	g++ $(CFLAGS) -O2 -Wall kontroler.o sejf.o test0.cc -o test0
+
 clean:
 	rm *.o

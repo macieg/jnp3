@@ -26,11 +26,11 @@ std::ostream& operator<<(std::ostream& out, const Kontroler &kontroler)
 {
 	if (kontroler.break_in())
 	{
-		out << "ALARM: WŁAMANIE!" << std::endl;
+		out << "ALARM: WLAMANIE" << std::endl;
 	}
 	else if (kontroler.is_manipulated())
 	{
-		out << "ALARM: ZMANIPULOWANY!" << std::endl;
+		out << "ALARM: ZMANIPULOWANY" << std::endl;
 	}
 	else
 	{

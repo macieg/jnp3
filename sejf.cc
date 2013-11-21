@@ -12,7 +12,7 @@ Sejf::Sejf(std::string text, int available_accesses) :
 {
 	if (available_accesses < 0)
 		throw std::invalid_argument(std::string("Liczba dostepow"\
-					"do sejfu nie moze byc ujemna."));
+					" do sejfu nie moze byc ujemna."));
 	break_in = false;
 	is_manipulated = false;
 	this->available_accesses = available_accesses;
@@ -97,6 +97,7 @@ void Sejf::operator-=(const int x)
 Sejf::Sejf(Sejf&& sejf) :
 	controler(this)
 {
+	text = std::move(sejf.text);
 	break_in = sejf.get_break_in();
 	is_manipulated = sejf.get_is_manipulated();
 	available_accesses = sejf.get_available_accesses();
@@ -104,6 +105,7 @@ Sejf::Sejf(Sejf&& sejf) :
 
 void Sejf::operator=(Sejf&& sejf)
 {
+	text = std::move(sejf.text);
 	break_in = sejf.get_break_in();
 	is_manipulated = sejf.get_is_manipulated();
 	available_accesses = sejf.get_available_accesses();
